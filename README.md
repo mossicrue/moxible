@@ -1,2 +1,2 @@
 # moxible
-An angentless light remote execution tool for Unix
+Another angentless light remote execution tool for Unix Servers, like Ansible and others
