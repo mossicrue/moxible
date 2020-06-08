@@ -1,8 +1,11 @@
 #!/usr/bin/env ruby
 
+require 'optparse'
 require 'yaml'
 require 'json'
 
 require_relative 'lib/moxible'
 require_relative 'lib/option_parser'
 require_relative 'lib/settings'
+
+globalParser = MoxibleOptionParser::Builder::initializeGlobalParser
