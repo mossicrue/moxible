@@ -1,5 +1,5 @@
 module Printer
-  class CSVPrinter
+  class ShellPrinter
 
   end
 end
