@@ -1,0 +1,14 @@
+# Moxible gitignore file
+
+# project specific exclusion
+inventory.ini
+config.yml
+
+# os generated file
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

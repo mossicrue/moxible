@@ -9,3 +9,7 @@ require_relative 'lib/option_parser'
 require_relative 'lib/settings'
 
 globalParser = MoxibleOptionParser::Builder::initializeGlobalParser
+globalParser.order!
+command, options = MoxibleOptionParser::Parser::parse globalParser, ARGV
+result = MoxibleRunner::Runner::run command, options
+MoxiblePrinter::Printer::printResult result, command, options

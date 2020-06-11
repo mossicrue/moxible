@@ -42,8 +42,10 @@ module MoxibleOptionParser
     end
 
     def self.printHelp(optionParser)
-      puts optionParser.help
-      exit 0
+      # Just for testing this simple way
+      Moxible::Utils::exit optionParse.help
+      # puts optionParser.help
+      # exit 0
     end
   end
 end
