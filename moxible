@@ -11,5 +11,6 @@ require_relative 'lib/settings'
 globalParser = MoxibleOptionParser::Builder::initializeGlobalParser
 globalParser.order!
 command, options = MoxibleOptionParser::Parser::parse globalParser, ARGV
-result = MoxibleRunner::Runner::run command, options
-MoxiblePrinter::Printer::printResult result, command, options
+quest = Moxible::Settings::createQuest command, options
+result = MoxibleRunner::Runner::run quest
+MoxiblePrinter::Printer::printResult result
