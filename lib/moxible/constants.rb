@@ -1,7 +1,7 @@
 module Moxible
   class Constants
     # general purpose constants of the moxible tools
-    PROGRAM_NAME = "Moxible"
+    PROGRAM_NAME = "Moxible".freeze
 
     # commands and subcommands of the moxible tools
     CMD_GLOBAL = :global
