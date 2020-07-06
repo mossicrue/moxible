@@ -6,7 +6,8 @@ require 'json'
 
 require_relative 'lib/moxible'
 require_relative 'lib/option_parser'
-require_relative 'lib/settings'
+require_relative 'lib/printer'
+require_relative 'lib/runner'
 
 globalParser = MoxibleOptionParser::Builder::initializeGlobalParser
 globalParser.order!
