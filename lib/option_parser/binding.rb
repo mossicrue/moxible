@@ -25,10 +25,19 @@ HELP
       end,
 
       #TODO: Finish the Moxible::OptionsParser::Binding class with at least the 3 major subcommand to be listed with basic command for start test
+      # -q, --quest   -->  filepath to quest file
+      # -p, --party   -->  filepath to a party file, list of servers
+      # -t, --target  -->  server, list of servers
+      # -u, --user    -->  global user to launch quests
       Moxible::Constants::CMD_RUN => OptionParser.new do |opts|
         opts.banner = "Usage:\n    #{opts.program_name} #{Moxible::Constants::CMD_RUN} [options] SUBCOMMANDS [ARG] ..."
         opts.separator ""
         opts.serpator <<HELP
+Parameters:
+SUBCOMMAND                     Subcommand
+[ARG] ...                      Subcommand arguments
+
+Subcommand:
 
 HELP
       end,
