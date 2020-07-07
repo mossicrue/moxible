@@ -1,7 +1,7 @@
 # Moxible gitignore file
 
 # project specific exclusion
-inventory.ini
+party.ini
 config.yml
 
 # os generated file
