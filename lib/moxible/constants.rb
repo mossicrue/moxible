@@ -7,10 +7,13 @@ module Moxible
     CMD_GLOBAL = :global
     CMD_RUN = :run
     CMD_CONFIG = :config
-    CMD_INVENTORY = :inventory
+    CMD_PARTY = :party
     CMD_VERSION = :version
 
     # options of the moxible tools
+    QUEST_FILE = :quest_file
+    PARTY_FILE = :party_file
+    GLOBAL_USER = :global_user
 
     # exit code of moxible
     EXIT_ZERO = 0

@@ -17,7 +17,7 @@ SUBCOMMAND                     Subcommand
 Subcommand:
   run                          Run a #{Moxible::Constants::PROGRAM_NAME} quest
   config                       Edit #{Moxible::Constants::PROGRAM_NAME} configuration
-  inventory                    Manipulate #{Moxible::Constants::PROGRAM_NAME} inventory
+  party                    Manipulate #{Moxible::Constants::PROGRAM_NAME} party
   version                      Show #{Moxible::Constants::PROGRAM_NAME} version
 
 See '#{Moxible::Constants::PROGRAM_NAME} [SUBCOMMANDS] --help' for more information on a specific command.
@@ -27,7 +27,6 @@ HELP
       #TODO: Finish the Moxible::OptionsParser::Binding class with at least the 3 major subcommand to be listed with basic command for start test
       # -q, --quest   -->  filepath to quest file
       # -p, --party   -->  filepath to a party file, list of servers
-      # -t, --target  -->  server, list of servers
       # -u, --user    -->  global user to launch quests
       Moxible::Constants::CMD_RUN => OptionParser.new do |opts|
         opts.banner = "Usage:\n    #{opts.program_name} #{Moxible::Constants::CMD_RUN} [options] SUBCOMMANDS [ARG] ..."
@@ -40,6 +39,19 @@ SUBCOMMAND                     Subcommand
 Subcommand:
 
 HELP
+
+        opts.on("-q", "--quest=QUEST_FILE", "Path of the quest file to run") do |quest|
+          @@parsedOptions[Moxible::Constants::QUEST_FILE] = quest
+        end
+
+        opts.on("-p", "--party=PARTY_FILE", "Path to the party file that will run a quest") do |party|
+          @@parsedOptions[Moxible::Constants::PARTY_FILE] = party
+        end
+
+        opts.on("-u", "--user=USER", "Global user that will run the quests commands on the party servers") do |user|
+          @@parsedOptions[Moxible::Constants::GLOBAL_USER] = user
+        end
+
       end,
 
       Moxible::Constants::CMD_CONFIG => OptionParser.new do |opts|
@@ -50,8 +62,8 @@ HELP
 HELP
       end,
 
-      Moxible::Constants::CMD_INVENTORY => OptionParser.new do |opts|
-        opts.banner = "Usage:\n    #{opts.program_name} #{Moxible::Constants::CMD_INVENTORY} [options] SUBCOMMANDS [ARG] ..."
+      Moxible::Constants::CMD_PARTY => OptionParser.new do |opts|
+        opts.banner = "Usage:\n    #{opts.program_name} #{Moxible::Constants::CMD_PARTY} [options] SUBCOMMANDS [ARG] ..."
         opts.separator ""
         opts.serpator <<HELP
 
