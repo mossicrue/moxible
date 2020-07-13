@@ -7,7 +7,7 @@ module Moxible
     CMD_GLOBAL = "global"
     CMD_RUN = "run"
     CMD_CONFIG = "config"
-    CMD_INVENTORY = "inventory"
+    CMD_PARTY = "party"
     CMD_VERSION = "version"
 
     # options of the moxible tools
