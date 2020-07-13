@@ -1,7 +1,7 @@
 module MoxibleOptionParser
   class Builder
     def self.initializeGlobalParser()
-      return self.initializeParser Moxible::Constants::GLOBAL_COMMAND
+      return self.initializeParser Moxible::Constants::CMD_GLOBAL
     end
 
     def self.initializeParser(command)

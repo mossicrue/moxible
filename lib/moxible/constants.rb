@@ -4,16 +4,17 @@ module Moxible
     PROGRAM_NAME = "Moxible".freeze
 
     # commands and subcommands of the moxible tools
-    CMD_GLOBAL = :global
-    CMD_RUN = :run
-    CMD_CONFIG = :config
-    CMD_INVENTORY = :inventory
-    CMD_VERSION = :version
+    CMD_GLOBAL = "global"
+    CMD_RUN = "run"
+    CMD_CONFIG = "config"
+    CMD_INVENTORY = "inventory"
+    CMD_VERSION = "version"
 
     # options of the moxible tools
 
     # exit code of moxible
     EXIT_ZERO = 0
     EXIT_INVALID_PARSE = 10
+    EXIT_INVALID_SUBCOMMAND = 11
   end
 end

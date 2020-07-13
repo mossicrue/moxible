@@ -32,7 +32,7 @@ HELP
       Moxible::Constants::CMD_RUN => OptionParser.new do |opts|
         opts.banner = "Usage:\n    #{opts.program_name} #{Moxible::Constants::CMD_RUN} [options] SUBCOMMANDS [ARG] ..."
         opts.separator ""
-        opts.serpator <<HELP
+        opts.separator <<HELP
 Parameters:
 SUBCOMMAND                     Subcommand
 [ARG] ...                      Subcommand arguments
@@ -45,7 +45,7 @@ HELP
       Moxible::Constants::CMD_CONFIG => OptionParser.new do |opts|
         opts.banner = "Usage:\n    #{opts.program_name} #{Moxible::Constants::CMD_CONFIG} [options] SUBCOMMANDS [ARG] ..."
         opts.separator ""
-        opts.serpator <<HELP
+        opts.separator <<HELP
 
 HELP
       end,
@@ -53,7 +53,7 @@ HELP
       Moxible::Constants::CMD_INVENTORY => OptionParser.new do |opts|
         opts.banner = "Usage:\n    #{opts.program_name} #{Moxible::Constants::CMD_INVENTORY} [options] SUBCOMMANDS [ARG] ..."
         opts.separator ""
-        opts.serpator <<HELP
+        opts.separator <<HELP
 
 HELP
       end,
@@ -61,11 +61,22 @@ HELP
       Moxible::Constants::CMD_VERSION => OptionParser.new do |opts|
         opts.banner = "Usage:\n    #{opts.program_name} #{Moxible::Constants::CMD_VERSION} [options] SUBCOMMANDS [ARG] ..."
         opts.separator ""
-        opts.serpator <<HELP
+        opts.separator <<HELP
 
 HELP
       end
     }
+
+    def self.getOptionParser(command)
+      if not SUBCOMMAND_TREE.has_key? command
+        Moxible::Utils::exitWithError "SUBCOMMAND #{command} not expected. Exiting", Moxible::Constants::EXIT_INVALID_SUBCOMMAND
+      end
+      return SUBCOMMAND_TREE[command]
+    end
+
+    def self.getParsedOptions()
+      return @@parsedOptions
+    end
 
   end
 end
