@@ -10,7 +10,9 @@ module MoxibleOptionParser
         self.parseOptions subOptionParser
         options = MoxibleOptionParser::Binding::getParsedOptions
       end
-      self.checkParsedOptions options, subOptionParser
+      # I need to think if this functions can be usefull here or moved in every dispatched functions,
+      # for now I think that the function will be commented also for a easy developing
+      # self.checkParsedOptions options, subOptionParser
       return command, options
     end
 
@@ -31,21 +33,20 @@ module MoxibleOptionParser
       begin
         optionParser.order!
       rescue OptionParser::ParseError => exception
-        Moxible::Utils::exitWithError "#{exception}\n\n See #{MoxibleSettings::Defaults::PROGRAM_NAME} --help", Moxible::Constants::INVALID_PARSE
+        Moxible::Utils::exitWithError "#{exception}\n\n See #{MoxibleSettings::Constants::PROGRAM_NAME} --help", Moxible::Constants::INVALID_PARSE
       end
     end
 
-    def self.checkParsedOptions(options, optionParser)
-      if options.empty?
-        self.printHelp optionParser
-      end
-    end
+    # I need to think if this functions can be usefull here or moved in every dispatched functions,
+    # for now I think that the function will be commented also for a easy developing
+    # def self.checkParsedOptions(options, optionParser)
+    #   if options.empty?
+    #     self.printHelp optionParser
+    #   end
+    # end
 
     def self.printHelp(optionParser)
-      # Just for testing this simple way
-      Moxible::Utils::exit optionParse.help
-      # puts optionParser.help
-      # exit 0
+      Moxible::Utils::exitWith optionParser.help
     end
   end
 end

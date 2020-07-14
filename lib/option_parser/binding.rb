@@ -45,7 +45,6 @@ HELP
         opts.on("-u", "--user=USER", "Global user that will run the quests commands on the party servers") do |user|
           @@parsedOptions[Moxible::Constants::GLOBAL_USER] = user
         end
-
       end,
 
       Moxible::Constants::CMD_CONFIG => OptionParser.new do |opts|

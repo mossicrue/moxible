@@ -11,11 +11,15 @@ module Moxible
     end
 
     def self.exitWithPending string
-      self.exitWith "#{string} is not implemented yet"
+      self.exitWith "[WIP] #{string} is not implemented yet"
     end
 
     def self.putsError(string)
       STDERR.puts "FATAL ERROR: #{string}"
+    end
+
+    def self.showVersion
+      self.exitWith "#{Moxible::Constants::PROGRAM_NAME} #{Moxible::Constants::PROGRAM_VERSION}"
     end
   end
 end

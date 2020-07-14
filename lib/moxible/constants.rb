@@ -2,6 +2,7 @@ module Moxible
   class Constants
     # general purpose constants of the moxible tools
     PROGRAM_NAME = "Moxible".freeze
+    PROGRAM_VERSION = "0.0.1 pre-alpha"
 
     # commands and subcommands of the moxible tools
     CMD_GLOBAL = "global"

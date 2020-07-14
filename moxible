@@ -3,6 +3,7 @@
 require 'optparse'
 require 'yaml'
 require 'json'
+require 'pp'
 
 require_relative 'lib/moxible'
 require_relative 'lib/option_parser'
@@ -13,7 +14,7 @@ require_relative 'lib/runner'
 globalParser = MoxibleOptionParser::Builder::initializeGlobalParser
 globalParser.order!
 command, options = MoxibleOptionParser::Parser::parse globalParser, ARGV
-result = {}
+result = Moxible::Dispatcher::dispatch command, options
 # quest = Moxible::Settings::createQuest command, options
 # result = MoxibleRunner::Runner::run quest
 MoxiblePrinter::Printer::printResult result
