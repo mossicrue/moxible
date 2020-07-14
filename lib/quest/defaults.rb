@@ -1,4 +1,4 @@
-module Moxible
+module MoxibleQuest
   class Defaults
 
     @@questDefaults = {

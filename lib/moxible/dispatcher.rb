@@ -1,5 +1,5 @@
 module Moxible
-  class Settings
+  class Dispatcher
 
   end
 end

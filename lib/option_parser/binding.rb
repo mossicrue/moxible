@@ -17,17 +17,13 @@ Parameters:
 Subcommand:
     run                              Run a #{Moxible::Constants::PROGRAM_NAME} quest
     config                           Edit #{Moxible::Constants::PROGRAM_NAME} configuration
-    party                            Manipulate #{Moxible::Constants::PROGRAM_NAME} party
+    party                            Edit #{Moxible::Constants::PROGRAM_NAME} party
     version                          Show #{Moxible::Constants::PROGRAM_NAME} version
 
 See '#{Moxible::Constants::PROGRAM_NAME} [SUBCOMMANDS] --help' for more information on a specific subcommand.
 HELP
       end,
 
-      #TODO: Finish the Moxible::OptionsParser::Binding class with at least the 3 major subcommand to be listed with basic command for start test
-      # -q, --quest   -->  filepath to quest file
-      # -p, --party   -->  filepath to a party file, list of servers
-      # -u, --user    -->  global user to launch quests
       Moxible::Constants::CMD_RUN => OptionParser.new do |opts|
         opts.banner = "Usage:\n    #{opts.program_name} #{Moxible::Constants::CMD_RUN} [options]"
         opts.separator ""
