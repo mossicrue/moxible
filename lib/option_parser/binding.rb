@@ -7,20 +7,20 @@ module MoxibleOptionParser
     SUBCOMMAND_TREE = {
       # global settings, I mean, first help when you type ./moxible --help
       Moxible::Constants::CMD_GLOBAL => OptionParser.new do |opts|
-        opts.banner = "Usage:\n    #{opts.program_name} SUBCOMMANDS [ARG] ..."
+        opts.banner = "Usage:\n    #{opts.program_name} SUBCOMMANDS [options]"
         opts.separator ""
         opts.separator <<HELP
 Parameters:
-SUBCOMMAND                     Subcommand
-[ARG] ...                      Subcommand arguments
+    SUBCOMMAND                       Subcommand to execute
+    [options]                        Command & Subcommand options
 
 Subcommand:
-  run                          Run a #{Moxible::Constants::PROGRAM_NAME} quest
-  config                       Edit #{Moxible::Constants::PROGRAM_NAME} configuration
-  party                    Manipulate #{Moxible::Constants::PROGRAM_NAME} party
-  version                      Show #{Moxible::Constants::PROGRAM_NAME} version
+    run                              Run a #{Moxible::Constants::PROGRAM_NAME} quest
+    config                           Edit #{Moxible::Constants::PROGRAM_NAME} configuration
+    party                            Manipulate #{Moxible::Constants::PROGRAM_NAME} party
+    version                          Show #{Moxible::Constants::PROGRAM_NAME} version
 
-See '#{Moxible::Constants::PROGRAM_NAME} [SUBCOMMANDS] --help' for more information on a specific command.
+See '#{Moxible::Constants::PROGRAM_NAME} [SUBCOMMANDS] --help' for more information on a specific subcommand.
 HELP
       end,
 
@@ -29,15 +29,13 @@ HELP
       # -p, --party   -->  filepath to a party file, list of servers
       # -u, --user    -->  global user to launch quests
       Moxible::Constants::CMD_RUN => OptionParser.new do |opts|
-        opts.banner = "Usage:\n    #{opts.program_name} #{Moxible::Constants::CMD_RUN} [options] SUBCOMMANDS [ARG] ..."
+        opts.banner = "Usage:\n    #{opts.program_name} #{Moxible::Constants::CMD_RUN} [options]"
         opts.separator ""
         opts.separator <<HELP
 Parameters:
-SUBCOMMAND                     Subcommand
-[ARG] ...                      Subcommand arguments
+    [options]                        Command & Subcommand options
 
-Subcommand:
-
+Options:
 HELP
 
         opts.on("-q", "--quest=QUEST_FILE", "Path of the quest file to run") do |quest|
@@ -55,7 +53,7 @@ HELP
       end,
 
       Moxible::Constants::CMD_CONFIG => OptionParser.new do |opts|
-        opts.banner = "Usage:\n    #{opts.program_name} #{Moxible::Constants::CMD_CONFIG} [options] SUBCOMMANDS [ARG] ..."
+        opts.banner = "Usage:\n    #{opts.program_name} #{Moxible::Constants::CMD_CONFIG} [options]"
         opts.separator ""
         opts.separator <<HELP
 
@@ -63,7 +61,7 @@ HELP
       end,
 
       Moxible::Constants::CMD_PARTY => OptionParser.new do |opts|
-        opts.banner = "Usage:\n    #{opts.program_name} #{Moxible::Constants::CMD_PARTY} [options] SUBCOMMANDS [ARG] ..."
+        opts.banner = "Usage:\n    #{opts.program_name} #{Moxible::Constants::CMD_PARTY} [options]"
         opts.separator ""
         opts.separator <<HELP
 
@@ -71,7 +69,7 @@ HELP
       end,
       # maybe an optparse for version command isn't necessary but at least is line of code :D
       Moxible::Constants::CMD_VERSION => OptionParser.new do |opts|
-        opts.banner = "Usage:\n    #{opts.program_name} #{Moxible::Constants::CMD_VERSION} [options] SUBCOMMANDS [ARG] ..."
+        opts.banner = "Usage:\n    #{opts.program_name} #{Moxible::Constants::CMD_VERSION}"
         opts.separator ""
         opts.separator <<HELP
 
