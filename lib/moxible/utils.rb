@@ -1,8 +1,8 @@
 module Moxible
   class Utils
-    def self.exitWithError(string, errorCode)
+    def self.exitWithError(string, error_code)
       self.putsError string
-      exit errorCode
+      exit error_code
     end
 
     def self.exitWith(string)
@@ -10,7 +10,7 @@ module Moxible
       exit Moxible::Constants::EXIT_ZERO
     end
 
-    def self.exitWithPending string
+    def self.exitWithPending(string)
       self.exitWith "[WIP] #{string} is not implemented yet"
     end
 
